@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+<script>
+
+ function myMove(){
+ var el=document.getElementById("container");
+var elem = document.getElementById("animate");
+var elem1 = document.getElementById("animate1");
+
+var id = setInterval(frame, 1);
+var pos = 0;var c=0;elem1.style.top=el.clientHeight-3*elem1.clientHeight;
+elem1.style.left=el.clientWidth-elem1.clientWidth;
+function frame() {
+
+
+
+ 
+if (pos >el.clientWidth-elem.clientWidth) {
+elem.style.left=0;
+pos=0;c++;
+elem.style.top=c*elem.clientHeight; 
+elem1.style.top=el.clientHeight-(c+3)*elem1.clientHeight;;
+
+}
+else { if (c*elem.clientHeight>el.clientHeight-elem.clientHeight) {elem.style.top=0;c=0;elem1.style.top=el.clientHeight-3*elem1.clientHeight;clearInterval(id);} else {}
+pos++;
+
+elem.style.left = pos + 'px';
+elem1.style.left =el.clientWidth-elem1.clientWidth-pos;
+}
+}
+
+
+
+}
+</script>
+
+</head>
+<style>
+
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+
+}
+#container2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: red;
+
+}
+#animate {
+  width: 18%;
+height: 9%;
+position: relative;
+background-color: black;
+ }
+p {font-size: 500%;
+}
+#animate1 {
+  width: 18%;
+height: 9%;
+position: relative;
+background-color: black;
+ }
+
+</style>
+
+<body >
+
+
+<div id ="container">
+<div id ="animate" ><p align="center"><font color="white">Ты пидор</font></p></div>
+<div id ="animate1" ><p align="center"><font color="white">Ты пидор</font></p></div>
+</div>
+<script >
+myMove();
+</script>
+
+
+
+
+</body>
+
+</html>
